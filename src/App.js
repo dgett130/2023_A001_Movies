@@ -8,6 +8,7 @@ import Trailer from './components/trailer/Trailer';
 import Header from "./components/header/Header";
 import ReviewForm from "./components/reviewForm/ReviewForm";
 import Reviews from "./components/reviews/Reviews";
+import NotFound from "./components/notFound/NotFound";
 
 function App() {
   const [topRatedMovies, setTopRatedMovies] = useState();
@@ -52,6 +53,7 @@ function App() {
             <Route path="/" element={<Home movies={topRatedMovies} />} ></Route>
             <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
             <Route path="/Reviews/:movieId" element={<Reviews getMovieData={getMovieData} movie={movieData} reviews={reviews} setReviews={setReviews}/>}></Route>
+            <Route path="*" element={<NotFound/>}></Route>
           </Route>
         </Routes>
       </div>
