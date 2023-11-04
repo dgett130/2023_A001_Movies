@@ -21,7 +21,7 @@ const Hero = ({movies}) => {
           {
             movies?.map((movie) => {
               return(
-                  <Paper>
+                  <Paper key={movie.id}>
                     <div className='movie-card-container'>
                       <div className='movie-card'
                       style={{
