@@ -3,9 +3,18 @@ import Carousel from 'react-material-ui-carousel';
 import {Paper} from "@mui/material";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCirclePlay} from "@fortawesome/free-solid-svg-icons";
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import Reviews from "../reviews/Reviews";
+import {Button} from "react-bootstrap";
 
 const Hero = ({movies}) => {
+
+  const navigate = useNavigate();
+
+  function reviews(movieId) {
+      navigate(`/Reviews/${movieId}`);
+  }
+
   return (
     <div>
         <Carousel>
@@ -33,6 +42,11 @@ const Hero = ({movies}) => {
                                         />
                                     </div>
                                 </Link>
+
+                                <div className="movie-review-button-container">
+                                   <Button variant="info" onClick={() => reviews(movie.id)}>Reviews</Button>
+                                </div>
+
                             </div>
                         </div>
                       </div>

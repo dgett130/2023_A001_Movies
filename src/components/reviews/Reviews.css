@@ -1,0 +1,11 @@
+.movie-poster-reviews {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.movie-poster-reviews > img {
+    height: 100%;
+    width: 100%;
+}
